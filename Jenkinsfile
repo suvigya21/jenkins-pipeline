@@ -34,5 +34,11 @@ pipeline {
 				}
 			}
 		}
+		
+		stage('Five') {
+			steps {
+				echo 'Finished'
+			}
+		}
 	}
 }
