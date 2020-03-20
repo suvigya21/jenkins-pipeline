@@ -23,12 +23,18 @@ pipeline {
             steps {
                 bat './gradlew check'
             }
-        }
+        }        
 		
 		stage('Five') {
 			steps {
 				echo 'Finished'
 			}
-		}
+		}		
 	}
+	
+	post {
+        always {
+            junit 'build/reports/**/*.xml'
+        }
+    }
 }
