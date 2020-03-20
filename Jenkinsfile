@@ -21,9 +21,15 @@ pipeline {
         
         stage('Test') {
             steps {
+                bat './gradlew test'
+            }
+        }
+        
+        stage('Check') {
+            steps {
                 bat './gradlew check'
             }
-        }        
+        }      
 		
 		stage('Five') {
 			steps {
@@ -31,10 +37,4 @@ pipeline {
 			}
 		}		
 	}
-	
-	post {
-        always {
-            junit 'build/reports/**/*.xml'
-        }
-    }
 }
