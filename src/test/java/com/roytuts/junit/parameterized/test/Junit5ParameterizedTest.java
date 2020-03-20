@@ -1,9 +1,9 @@
 package com.roytuts.junit.parameterized.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -55,7 +55,7 @@ public class Junit5ParameterizedTest {
 	void palindromesMethodSourceStream(String candidate) {
 		assertTrue(PalindromChecker.isPalindrome(candidate));
 	}
-	
+
 	@ParameterizedTest
 	@MethodSource("com.roytuts.junit.parameterized.PalindromChecker#values")
 	void palindromesMethodSourceExternal(String candidate) {
